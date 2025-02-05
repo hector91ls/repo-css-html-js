@@ -1,0 +1,257 @@
+.sectionC {
+  min-height: 200vh;
+}
+.sectionP {
+  min-height: 2000vh;
+  view-timeline: --scroll;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.content {
+  aspect-ratio: 16/8;
+  width: calc(100vw - 15px);
+  position: sticky;
+  top: 96px;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    aspect-ratio: 16 / 8;
+    max-height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    animation: luz both linear, zoom both linear;
+    animation-timeline: --scroll;
+    animation-range: entry 0% contain 20%, contain 50%;
+
+    &.ventana {
+      filter: brightness(0.4);
+    }
+    &:not(.ventana) {
+      filter: brightness(0);
+    }
+    &.man {
+      animation: mover both linear, luz both linear, move2 both linear;
+      animation-timeline: --scroll;
+      animation-range: entry 40% contain 40%, entry 40% contain 40%, contain 80%;
+      transform: translateY(180px) translateX(0);
+      filter: brightness(.3);
+
+    }
+  }
+}
+
+@keyframes luz {
+  to {
+    filter: brightness(1);
+  }
+}
+
+@keyframes mover {
+  to {
+    transform: translateY(0) translateX(-180px);
+  }
+}
+
+@keyframes zoom {
+  to {
+    scale: 1.5;
+  }
+}
+
+@keyframes move2 {
+  to{
+    transform: translateX(-100%)
+  }
+}
+.cielo {
+  opacity: 1;
+}
+.suelo {
+  opacity: 1;
+}
+
+.montañas {
+  opacity: 1;
+}
+
+.pajaros {
+  opacity: 1;
+}
+
+.bosque {
+  opacity: 1;
+}
+
+.man {
+  opacity: 1;
+}
+
+.text {
+  position: sticky;
+  top: 200px;
+  p {
+    font-family: Tilt Neon;
+    font-size: 60px;
+    text-align: center;
+    animation: aparece both linear, desaparece both linear, aumenta both linear;
+    animation-timeline: --scroll;
+    animation-range: entry, exit exit 70%, entry;
+    opacity: 0;
+    position: sticky;
+    top: 130px;
+    &.variant {
+      color: black;
+      animation: aparece both linear, desaparece both linear,
+        aumenta both linear, gira both linear;
+      animation-timeline: --scroll;
+      animation-range: entry, exit exit 70%, entry, entry;
+      transform: rotate(100deg);
+    }
+  }
+}
+
+@keyframes aparece {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes desaparece {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes aumenta {
+  to {
+    font-size: 100px;
+  }
+}
+
+@keyframes gira {
+  to {
+    transform: rotate(0);
+  }
+}
+
+//   position: relative;
+//   view-timeline: --scroll;
+//   margin: 0 auto 440px;
+//   display: grid;
+//   align-items: flex-start;
+//   grid-template-columns: 65% 35%;
+
+//   span{
+//   display: inline;
+//   animation: opacity both linear;
+//     animation-timeline: --scroll;
+
+//     &:nth-child(1){
+//       animation-range: entry 140% contain 100%
+//     }
+//     &:nth-child(2){
+//       animation-range: entry 150% contain 100%
+//     }
+//     &:nth-child(3){
+//       animation-range: entry 160% contain 100%
+//     }
+//     &:nth-child(4){
+//       animation-range: entry 170% contain 100%
+//     }
+//     &:nth-child(5){
+//       animation-range: entry 180% contain 100%
+//     }
+//     &:nth-child(6){
+//       animation-range: entry 190% contain 100%
+//     }
+//   }
+//   &.variant {
+//     grid-template-columns: 35% 65%;
+
+//     .shakamoto {
+//       transform: translateX(0px);
+//     }
+//     .text {
+//       justify-content: flex-start;
+
+//     }
+//   }
+//   .shakamoto {
+//     position: sticky;
+//     top: 190px;
+//     padding: 10px;
+//     margin: 0 auto;
+//     width: 100%;
+//     max-width: 300px;
+//     animation: scale both linear, opacity both linear;
+//     animation-timeline: --scroll;
+//     animation-range: entry 10% contain 25%;
+//     transform: translateX(-20px);
+//   }
+//   .text {
+//     height: 100%;
+//     display: grid;
+//     align-items: baseline;
+//     justify-content: flex-end;
+//     padding: 0 10px;
+//     p {
+//       font-family: Smooch Sans, serif;
+//       position: sticky;
+//       top: 140px;
+//       padding: 10px;
+//       border: 2px solid;
+//       border-radius: 20px;
+//       animation: opacity both linear;
+//       animation-timeline: --scroll;
+//       animation-range: entry 10% contain 25%;
+//       margin: 10px;
+//       max-width: 600px;
+//       margin: 0;
+//       font-size: 123%;
+
+//       @media (min-width: 30rem) {
+//         font-size: 200%;
+//         padding: 25px;
+//       }
+//     }
+//   }
+// }
+
+// @keyframes scale {
+//   from {
+//     scale: 1;
+//   }
+//   to {
+//     scale: 1.3;
+
+//   }
+// }
+
+// @keyframes opacity {
+//   from {
+//     opacity: 0;
+
+//   }
+//   to {
+//     opacity: 1;
+
+//   }
+// }
+
+// @keyframes derecha {
+//   to {
+//     transform: translateX(0px);
+//   }
+// }
+
+// @keyframes izquierda {
+//   to {
+//     transform: translateX(0px);
+//   }
+// }
